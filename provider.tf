@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "hack-terraform-state2"
+    bucket         = "hack-chamu-state"
     key            = "vpc/terraform.tfstate"
     region         = "eu-west-1"
     dynamodb_table = "terraform-locks"

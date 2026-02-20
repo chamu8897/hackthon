@@ -201,7 +201,7 @@ resource "aws_ecs_task_definition" "task2" {
   network_mode             = "awsvpc"
   cpu                      = var.cpu
   memory                   = var.memory
-  execution_role_arn       = "arn:aws:iam::111225938018:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
+  execution_role_arn       = "arn:aws:iam::111225938018:role/ecsTaskExecutionRole"
 
   container_definitions = jsonencode([
     {

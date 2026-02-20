@@ -189,7 +189,7 @@ resource "aws_db_subnet_group" "mysql_subnet_group" {
   }
 }
 
-resource "aws_db_instance" "mysql" {
+/* resource "aws_db_instance" "mysql" {
   identifier              = "mysql-instance"
   allocated_storage       = var.db_allocated_storage
   engine                  = "mysql"
@@ -205,4 +205,4 @@ resource "aws_db_instance" "mysql" {
   tags = {
     Name = "mysql-db"
   }
-}
+} */

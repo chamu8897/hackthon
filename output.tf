@@ -31,7 +31,7 @@ output "ecs_security_group_id" {
   value = aws_security_group.ecs_sg.id
 }
 
-output "db_endpoint" {
+/* output "db_endpoint" {
   description = "Connection endpoint for the MySQL RDS instance"
   value       = aws_db_instance.mysql.endpoint
 }
@@ -44,5 +44,5 @@ output "db_name" {
 output "db_username" {
   description = "Master username"
   value       = aws_db_instance.mysql.username
-}
+} */
 

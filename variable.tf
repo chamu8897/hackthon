@@ -55,12 +55,12 @@ variable "db_engine_version" {
   type        = string
 }
 
-variable "vpc_security_group_ids" {
+/* variable "vpc_security_group_ids" {
   description = "List of VPC security groups"
   type        = list(string)
-}
+} */
 
-variable "subnet_ids" {
+/*variable "subnet_ids" {
   description = "List of subnet IDs for DB subnet group"
   type        = list(string)
-}
+} */

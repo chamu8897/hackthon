@@ -11,7 +11,6 @@ task2_name   = "task2"
 
 task1_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-app-repo:latest"
 task2_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-app-repo:latest"
-
 cpu    = "256"
 memory = "512"
 

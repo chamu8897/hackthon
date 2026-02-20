@@ -148,7 +148,7 @@ resource "aws_ecs_task_definition" "fargate_task" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = arn:aws:iam::111225938018:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS
+  execution_role_arn       = "arn:aws:iam::111225938018:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
 
   container_definitions = jsonencode([
     {

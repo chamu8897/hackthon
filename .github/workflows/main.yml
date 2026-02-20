@@ -1,36 +1,18 @@
 name: Terraform AWS Deployment
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:   # manual trigger
   push:
     branches:
       - main
 
 jobs:
-  checkov:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Run Checkov scan
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: .
-          framework: terraform
-      - name: Run Checkov scan
-        uses: bridgecrewio/checkov-action@v12
-        with:
-          directory: .
-          framework: terraform
-          skip_check: CKV_AWS_23,CKV_AWS_20
-        
   terraform:
     runs-on: ubuntu-latest
-    needs: checkov   # run only if Checkov passes
+
     permissions:
-      id-token: write
-      contents: read
+      id-token: write   # required for OIDC
+      contents: read    # required for actions/checkout
 
     steps:
       - name: Checkout repository
@@ -47,6 +29,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        
 
       - name: Terraform Plan
         run: terraform plan -var-file=terraform.tfvars

@@ -35,6 +35,3 @@ subnet_id           = "subnet-05dae7c5a61092684"
 security_group_ids  = [
   "sg-0a9268987d307a423"
 ]
-
-root_volume_size    = 50
-root_volume_type    = "gp3"

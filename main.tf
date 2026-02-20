@@ -170,13 +170,6 @@ data "aws_iam_role" "execution_role_arn" {
   name = "ecsTaskExecutionRole"
 }
 
-# ECS Cluster
-resource "aws_ecs_cluster" "this" {
-  name = var.cluster_name
-}
-
-
-
 # Task Definition 1
 resource "aws_ecs_task_definition" "task1" {
   family                   = var.task1_name

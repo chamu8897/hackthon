@@ -170,15 +170,6 @@ data "aws_iam_role" "execution_role_arn" {
   name = "ecsTaskExecutionRole"
 }
 
-provider "aws" {
-  region = var.aws_region
-
-  assume_role {
-    role_arn     = var.aws_role_arn
-    session_name = "terraform-oidc-session"
-  }
-}
-
 # ECS Cluster
 resource "aws_ecs_cluster" "this" {
   name = var.cluster_name

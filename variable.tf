@@ -57,3 +57,9 @@ variable "memory" {
   type        = string
   default     = "512"
 }
+
+variable "ecs_service_name" {
+  description = "Name of the ECS service"
+  type        = string
+  default     = "fargate-service"
+}

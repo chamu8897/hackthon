@@ -14,3 +14,5 @@ task2_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-app-repo:late
 
 cpu    = "256"
 memory = "512"
+
+ecs_service_name = "my-fargate-service"

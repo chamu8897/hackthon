@@ -9,8 +9,8 @@ cluster_name = "fargate-cluster"
 task1_name   = "task1"
 task2_name   = "task2"
 
-task1_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-app-repo:latest"
-task2_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-app-repo:latest"
+task1_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-patient-serv:latest"
+task2_image  = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-patient-serv:latest"
 cpu    = "256"
 memory = "512"
 

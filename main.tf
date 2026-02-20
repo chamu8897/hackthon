@@ -156,7 +156,7 @@ resource "aws_ecs_task_definition" "fargate_task" {
 resource "aws_ecs_service" "fargate_service" {
   name            = var.ecs_service_name
   cluster         = aws_ecs_cluster.fargate_cluster.id
-  task_definition = aws_ecs_task_definition.fargate_task.arn
+  task_definition = aws_ecs_task_definition.task1.arn
   desired_count   = 2
   launch_type     = "FARGATE"
 

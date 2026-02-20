@@ -170,4 +170,68 @@ data "aws_iam_role" "execution_role_arn" {
   name = "ecsTaskExecutionRole"
 }
 
+provider "aws" {
+  region = var.aws_region
+
+  assume_role {
+    role_arn     = var.aws_role_arn
+    session_name = "terraform-oidc-session"
+  }
+}
+
+# ECS Cluster
+resource "aws_ecs_cluster" "this" {
+  name = var.cluster_name
+}
+
+
+
+# Task Definition 1
+resource "aws_ecs_task_definition" "task1" {
+  family                   = var.task1_name
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  cpu                      = var.cpu
+  memory                   = var.memory
+  execution_role_arn       = "arn:aws:iam::111225938018:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
+
+  container_definitions = jsonencode([
+    {
+      name      = var.task1_name
+      image     = var.task1_image
+      essential = true
+      portMappings = [
+        {
+          containerPort = 80
+          hostPort      = 80
+        }
+      ]
+    }
+  ])
+}
+
+# Task Definition 2
+resource "aws_ecs_task_definition" "task2" {
+  family                   = var.task2_name
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  cpu                      = var.cpu
+  memory                   = var.memory
+  execution_role_arn       = "arn:aws:iam::111225938018:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS"
+
+  container_definitions = jsonencode([
+    {
+      name      = var.task2_name
+      image     = var.task2_image
+      essential = true
+      portMappings = [
+        {
+          containerPort = 8080
+          hostPort      = 8080
+        }
+      ]
+    }
+  ])
+}
+
 

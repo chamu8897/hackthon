@@ -206,7 +206,7 @@ resource "aws_ecs_task_definition" "task2" {
   container_definitions = jsonencode([
     {
       name      = var.task2_name
-      image     = 111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-patient-serv:latest
+      image     = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-patient-serv:latest"
       essential = true
       portMappings = [
         {

@@ -140,12 +140,12 @@ resource "aws_ecs_task_definition" "fargate_task" {
   container_definitions = jsonencode([
     {
       name      = "nginx"
-      image     = "nginx:latest"
+      image     = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-patient-serv:latest"
       essential = true
       portMappings = [
         {
-          containerPort = 80
-          hostPort      = 80
+          containerPort = 3000
+          hostPort      = 3000
         }
       ]
     }
@@ -182,12 +182,12 @@ resource "aws_ecs_task_definition" "task1" {
   container_definitions = jsonencode([
     {
       name      = var.task1_name
-      image     = var.task1_image
+      image     = "111225938018.dkr.ecr.eu-west-1.amazonaws.com/chamu-patient-serv:latest"
       essential = true
       portMappings = [
         {
-          containerPort = 80
-          hostPort      = 80
+          containerPort = 3001
+          hostPort      = 3001
         }
       ]
     }
